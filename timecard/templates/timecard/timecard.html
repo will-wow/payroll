@@ -1,9 +1,41 @@
+{% load jstemplate %}
+
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>Timecard</title>
+    <link rel="stylesheet" type="text/css" href="timecard.css">
+    <script type='text/javascript' src='{{ STATIC_URL }}lib/jquery-2.0.3.min.js'></script>
+    <script type='text/javascript' src='{{ STATIC_URL }}lib/mustache.js'></script>
+    {% mustachejs "address" %}
 </head>
 <body>
-    <p>Hello World</p>
+    <form class='timecard'>
+        <div class='tc-title'>
+            <h2>Employee</h2>
+        </div>
+        <div class='tc-head'>
+            <label class="tc tc-lab day">Day</label>
+            <label class="tc tc-lab work_date">Date</label>
+            <label class="tc tc-lab hours">Hrs</label>
+            <label class="tc tc-lab minutes">Min</label>
+            <label class="tc tc-lab pto">PTO</label>
+            <label class="tc tc-lab no_lunch">N/L</label>
+            <label class="tc tc-lab comments">Comments</label>
+        </div>
+        {% for day in days %}
+        <div class='tc-row'>
+            <input id='day_1' placeholder="day" name="day" class="tc tc-field day" type="text" value="{{ day.work_date|date:'D' }}">
+            <input id='work_date_1' placeholder="date" name="work_date" class="tc tc-field work_date" type="text" value="{{ day.work_date }}">
+            <input id='hours_1' placeholder="hours" name="hours" class="tc tc-field hours" type="text" value="{{ day.hours }}">
+            <input id='minutes_1' placeholder="min" name="minutes" class="tc tc-field minutes" type="text" value="{{ day.minutes }}">
+            <input id='pto_1' placeholder="pto" name="pto" class="tc tc-field pto" type="text" value="{{ day.pto }}">
+            <input id='no_lunch_1' name="no_lunch" class="tc tc-ckbox no_lunch" type="checkbox" value="{{ day.no_lunch }}">
+            <input id='comments_1' placeholder="comments" name="comments" class="tc tc-field comments" type="text" value="{{ day.comments }}">
+        </div>
+        {%  endfor %}
+    </form>
 </body>
 </html>

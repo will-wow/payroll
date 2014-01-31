@@ -18,8 +18,8 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = 'D:\Documents\Code\python\modern-website\static'
-MEDIA_ROOT = 'D:\Documents\Code\python\modern-website\media'
+STATIC_ROOT = 'D:\Documents\Code\python\static'
+MEDIA_ROOT = 'D:\Documents\Code\python\media'
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 

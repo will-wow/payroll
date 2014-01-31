@@ -1,0 +1,51 @@
+html {height:100%;}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    height:100%;
+    margin:0;
+    background-color:#f4f4f7;
+}
+
+input{
+    margin-left:0;
+    margin-right:0;
+    padding: .5em 0;
+    border: 1px solid #cccccc;
+    text-indent:.25em;
+}
+input[type="submit"]{
+    text-indent:0;
+    padding:.5em 2em;
+}
+
+.timecard {
+    width:90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100%;
+    background-color:#ebebf0
+}
+
+.tc-head{width:100%;font-size:0;}
+.tc-row{width:100%;font-size:0;}
+.tc-head label {
+    display: inline-block;
+    text-align: center;
+    font-size:14px;
+    border: 1px solid transparent
+}
+
+.tc {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+.day{width:9%;}
+.work_date{width:9%;}
+.hours{width:9%;}
+.minutes{width:9%;}
+.pto{width:9%;}
+.no_lunch{width:2%;}
+.comments{width:40%}
